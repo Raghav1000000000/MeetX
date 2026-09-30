@@ -1,0 +1,14 @@
+{
+  "name": "meetx-mvp",
+  "private": true,
+  "workspaces": ["apps/*", "server", "packages/*"],
+  "scripts": {
+    "dev": "concurrently \"npm run dev --workspace server\" \"npm run dev --workspace admin\"",
+    "server": "npm run dev --workspace server",
+    "admin": "npm run dev --workspace admin",
+    "mobile": "npm run start --workspace mobile",
+    "build": "npm run build --workspace admin && npm run build --workspace server",
+    "seed": "npm run seed --workspace server"
+  },
+  "devDependencies": { "concurrently": "^9.1.2" }
+}
